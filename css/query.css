@@ -1,0 +1,185 @@
+/* ------ Mobile View for Medium Phones ------ */
+/* 992px 600px 1200px */
+@media screen and (max-width: 992px){
+    /* General Style */
+    .container-fluid-1{
+        width: 100%;
+        padding: 4rem 5%;
+    }
+    .container-fluid-2{
+        width: 100%;
+        padding: 4rem 5%;
+    }
+    header .navbar{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        background: var(--color-light);
+        top: 0;
+        right: -100%;
+        max-width: 350px;
+        padding-top: 6rem;
+        text-align: center;
+        transition: .5s ease-in-out;
+        box-shadow: -5px 5px 5px -1px rgba(112, 112, 112, 0.86);
+    }
+    header .navbar ul{
+        display: block;
+    }
+    header .navbar ul li{
+        margin-bottom: 2rem;
+    }
+    header .navbar ul li a{
+        font-size: 1.3rem;
+    }
+    header .menu-toggler{
+        display: block;
+    }
+    header .navbar.active{
+        right: 0;
+    }
+    header .menu-toggler.active span:nth-child(1){
+        transform: rotate(-45deg);
+        top: 4px;
+    }
+    header .menu-toggler.active span:nth-child(2){
+        opacity: 0;
+    }
+    header .menu-toggler.active span:nth-child(3){
+        transform: rotate(45deg);
+        bottom: 14px;
+    }
+    .toggle-wrap{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /* Intro */
+    .intro{
+        width: 100%;
+        height: fit-content;
+        background: var(--color-light);
+        padding: 6rem 0;
+    }
+    .intro-wrapper{
+        margin: 0 5%;
+    }
+    /* About */
+    .about-right{
+        padding-left: 2rem;
+    }
+    .skill-wrapper .sections{
+        width: 100%;
+    }
+    .skill-wrapper .sections .top{
+        width: 100%;
+        justify-content: center;
+    }
+    .skill-wrapper .sections:first-child{
+        border-right: none;
+        padding-right: 0;
+    }
+    .skill-wrapper .sections:last-child{
+        margin-top: 0;
+        padding-left: 1rem;
+    }
+    /* Services */
+    .service-wrapper .box{
+        min-height: 18rem;
+    }
+    /* Certifications */
+    .certifications-wrapper{
+        flex-wrap: wrap;
+    }
+    .certifications-wrapper .box{
+        width: 45%;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 730px){
+    .about-left img{
+        display: none;
+    }
+    .about-right{
+        padding-left: 2rem;
+    }
+    .service-wrapper{
+        flex-wrap: wrap;
+    }
+    .service-wrapper .box{
+        width: 80%;
+        min-height: 10rem;
+        max-height: fit-content;
+        margin: 0 auto;
+        margin-bottom: 2.5rem;
+    }
+    .contact-wrapper{
+        display: block !important;
+    }
+    .contact-left{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .contact-left img{
+        width: 60%;
+        margin-bottom: 1rem;
+    }
+    .contact-right{
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 660px){
+    .intro-wrapper .intro-left p{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .about{
+        display: block;
+        padding: 4rem 3rem;
+    }
+    .about-left{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .about-right{
+        padding-left: 0;
+        width: 100%;
+    }
+    .about-right h2{text-align: center;}
+}
+@media screen and (max-width: 550px){
+    .intro-wrapper{
+        display: block;
+    }
+    .intro-wrapper .intro-left{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .intro-wrapper .intro-right{
+        padding: 0;
+        text-align: center;
+    }
+    .skill-wrapper{
+        display: block;
+        text-align: center;
+    }
+    .skill-wrapper .box{
+        text-align: center;
+        width: 40%;
+        margin: 0 auto;
+        padding: .5rem 0;
+    }
+}
+@media screen and (max-width: 425px){
+    .project-wrapper .box img{
+        width: 100%;
+    }
+}

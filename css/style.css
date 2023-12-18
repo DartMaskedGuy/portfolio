@@ -1,0 +1,470 @@
+:root{
+    --color-primary: #a52a2a;
+    --color-secondary: #808080;
+    --color-white: #ffffff;
+    --color-light: #e2e2e2;
+    --color-black: #000;
+    --color-dark: #111;
+}
+.dark-theme{
+    --color-white: #333333;
+    --color-light: gray;
+    --color-black: #fff;
+    --color-dark: whitesmoke;
+    --color-secondary: #d3d3d3;
+  }
+/* --------------- General Style ---------------- */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: var(--color-white);
+    color: var(--color-black);
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container-fluid-1{
+    width: 100%;
+    padding: 4rem 15%;
+}
+.container-fluid-2{
+    width: 100%;
+    padding: 4rem 10%;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.text-center{text-align: center;}
+a{
+    text-decoration: none;
+    color: black;
+}
+ul li{
+    list-style: none;
+}
+.btn{
+    padding: .5rem 1.2rem;
+    border: 1px solid var(--color-black);
+    border-radius: 20px;
+    cursor: pointer;
+}
+.btn-primary{
+    background: var(--color-primary);
+    color: #ffffff;
+    transition: .3s ease-in;
+}
+.btn-primary:hover{
+    background: rgb(143, 37, 37);
+}
+.btn-secondary{
+    background: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    transition: .2s ease-in;
+}
+.btn-secondary:hover{
+    background: whitesmoke;
+}
+.h2{
+    font-size: 1.7rem;
+    font-family:  Tahoma, 'Segoe UI', Geneva, Verdana, sans-serif;
+}
+.d-flex{
+    display: flex;
+    align-items: center;
+}
+.d-flex-sb{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* --------------------------------- Header Style ---------------------------------- */
+header{
+    width: 100%;
+    padding: 1rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-white);
+    position: fixed;
+    top: 0; left: 0;
+    box-shadow: -5px 5px 5px -1px rgba(112, 112, 112, 0.86);
+}
+header h2 a{
+    font-family: tahoma;
+    color: var(--color-dark);
+}
+header .menu-toggler{
+    background: none;
+    width: 30px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    z-index: 999;
+    display: none;
+}
+header .menu-toggler span{
+    display: block;
+    height: 3px;
+    background: var(--color-secondary);
+    margin: 6px 0;
+    position: relative;
+    transition: .3s ease-in-out;
+}
+header .navbar ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+header .navbar ul li a{
+    font-size: 1rem;
+    color: var(--color-black);
+    font-weight: 600;
+}
+header .navbar ul li a i{
+    font-size: 1.5rem;
+    color: var(--color-primary);
+}
+.toggle-btn{
+  top: 20px;
+  right: 20px;
+  background: #aaa;
+  width: 45px;
+  border-radius: 15px;
+  padding: 2px 3px;
+  cursor: pointer;
+  display: flex;
+  transition: padding-left 0.5s, background 0.5s;
+}
+#dark-btn span,
+#auto-save-btn span,
+#disable-toggle-btn span{
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  display: inline-block;
+}
+#dark-btn.btn-on,
+#auto-save-btn.btn-on,
+#disable-toggle-btn.btn-on{
+  padding-left: 23px;
+  background: #000;
+}
+.moon-icon{
+    font-size: .8rem;
+    text-align: center;
+}
+/* --------------------------------- Body ---------------------------------- */
+main{
+    width: 100%;
+    padding-top: 4rem;
+}
+/* ----------------------- Intro Style -------------------------- */
+.intro{
+    width: 100%;
+    height: 80vh;
+    background: var(--color-light);
+    padding: 6rem 0;
+}
+.intro-wrapper{
+    margin: 0 15%;
+}
+.intro-wrapper .intro-left h2{
+    font-size: 1.5rem;
+    color: rgb(85, 85, 85);
+}
+.intro-wrapper .intro-left h1{
+    font-size: 2.3rem;
+    padding: .5rem 0;
+}
+.resume-btn:hover{
+    background: var(--color-primary);
+    color: var(--color-light);
+}
+.intro-wrapper .intro-left p{
+    width: 350px;
+    font-size: 1.5rem;
+}
+.intro-wrapper .intro-left .text-changer::after{
+    content: "A Frontend Website Developer";
+    animation: textanim 10s linear infinite;
+}
+@keyframes textanim{
+    50%{
+        content: "A Frontend Website Developer";
+    }
+    100%{
+        content: "A Mobile Application Developer";
+    }
+}
+.buttons-div{margin: 2rem 0;}
+.social-links{
+    margin: .8rem 0;
+}
+.social-links a{
+    font-size: 1.5rem;
+    padding-right: 1rem;
+    color: var(--color-primary);
+}
+.intro-right img{
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    object-fit: cover;
+    border-radius: 50%;
+}
+/* ----------------------- About Style -------------------------- */
+.about{
+    background: var(--color-white);
+    display: flex;
+    justify-content: space-between;
+}
+.about-left{
+    width: 25%;
+    display: flex;
+    align-items: center;
+}
+.about-left img{
+    width: 100%;
+}
+.about-right{
+    width: 70%;
+}
+.about-right h2{
+    margin-bottom: 1rem;
+}
+.about-right p{
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-family: sans-serif, Arial, Helvetica;
+    color: var(--color-dark);
+    text-align: justify;
+    line-height: 1.7rem;
+}
+.about-bottom h4{
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+}.about-bottom p{
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 1rem;
+    line-height: 1.2rem;
+}
+/* ----------------------- Skills Style -------------------------- */
+.skills{
+    background: var(--color-white);
+}
+.skill-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.skill-wrapper .sections{
+    width: 50%;
+    gap: .5rem;
+    min-height: 360px;
+}
+.skill-wrapper .sections:first-child{
+    border-right: 1px solid var(--color-primary);
+    padding-right: 3rem;
+}
+.skill-wrapper .sections:last-child{
+    padding-left: 2rem;
+}
+.skill-wrapper .sections .top{
+    margin-bottom: 2rem;
+}
+.skill-wrapper .sections .top div{
+    margin-left: 10px;
+}
+.top-icon{font-size: 2.5rem;}
+.expand-skills{
+    font-size: 2rem;
+    cursor: pointer;
+}
+.expanded-box ul li{
+    border-bottom: 1px solid var(--color-primary);
+    padding-bottom: 15px;
+    margin-bottom: 1.2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/* ----------------------- Services Style -------------------------- */
+.services{
+    background: var(--color-light);
+}
+.services h2{
+    margin-bottom: 1rem;
+}
+.service-wrapper{
+    margin: 2rem 0;
+    width: 100%;
+}
+.service-wrapper .box{
+    width: 30%;
+    min-height: 14rem;
+    background: var(--color-white);
+    padding: 2rem 1rem;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: -5px 5px 5px -1px rgba(112, 112, 112, 0.86);
+}
+.service-wrapper .box i{
+    font-size: 1.5rem;
+}
+.service-wrapper .box h5{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+.service-wrapper .box p{
+    font-size: 1rem;
+    font-family: sans-serif, Arial, Helvetica;
+    line-height: 1.5rem;
+}
+/* ----------------------- Project Style -------------------------- */
+.projects{
+    background: var(--color-light);
+}
+.projects h2{
+    margin-bottom: 1rem;
+}
+.project-wrapper{
+    width: 100%;
+    height: fit-content;
+    padding-bottom: .5rem;
+    gap: 2rem;
+    margin: 2rem 0;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+}
+.project-wrapper::-webkit-scrollbar{display: none;}
+.project-wrapper .box{
+    min-width: 300px;
+    height: fit-content;
+    text-align: center;
+    padding: 1rem;
+    background: var(--color-white);
+    border-radius: 5px;
+}
+.project-wrapper .box:first-child{
+    margin-left: 1rem;
+}
+.project-wrapper .box:hover{
+    box-shadow: -1px 0px 5px 1px rgba(0,0,0,0.35);
+    -webkit-box-shadow: -1px 0px 5px 1px rgba(0,0,0,0.35);
+    -moz-box-shadow: -1px 0px 5px 1px rgba(0,0,0,0.35);
+}
+.project-wrapper .box img{
+    width: 100%;
+    height: 150px;
+    border: 1px solid var(--color-secondary);
+    object-fit: cover;
+}
+.project-wrapper .box h3{
+    margin: 1rem 0;
+}
+.project-wrapper .box .description{
+    margin-bottom: 1rem;
+    height: 65px;
+    text-align: justify;
+}
+.language-stack{
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+.languages{
+    width: 100%;
+    gap: 1rem;
+}
+.languages p{
+    background: var(--color-light);
+    padding: .3rem .5rem;
+    font-size: 0.6rem;
+}
+.action-btn{
+    margin-bottom: 1rem;
+}
+.action-btn a{
+    width: 100%;
+    display: block;
+}
+/* ----------------------- Certifications Style -------------------------- */
+.certifications{
+    background: var(--color-white);
+}
+.certifications-wrapper{
+    margin-top: 2.5rem;
+}
+.certifications-wrapper .box{
+    width: 22%;
+}
+.certifications-wrapper .box:hover{
+    box-shadow: -1px 0px 5px 1px rgba(0,0,0,0.35);
+    -webkit-box-shadow: -1px 0px 5px 1px rgba(0,0,0,0.35);
+    -moz-box-shadow: -1px 0px 5px 1px rgba(0,0,0,0.35);
+}
+.certifications-wrapper .box img{
+    width: 100%;
+}
+/* ----------------------- Contact Style -------------------------- */
+.contact{
+    background: var(--color-white);
+}
+.contact-wrapper{
+    margin-top: 2rem;
+}
+.contact-left{
+    width: 50%;
+    padding: 1rem 2rem;
+}
+.contact-left img{
+    width: 200px;
+    margin-bottom: 1rem;
+}
+.contact-right{
+    width: 50%;
+    padding: 2rem 1rem;
+    background: var(--color-light);
+    box-shadow: -5px 5px 5px -1px rgba(121, 121, 121, 0.644);
+}
+.contact-right .form-wrapper input{
+    width: 100%;
+    padding: .6rem 1rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    
+}
+.contact-right .form-wrapper input[type="text"],
+.contact-right .form-wrapper input[type="email"]{
+    border-bottom: 1px solid #000;
+    margin-bottom: 1.2rem;
+}
+.contact-right .form-wrapper textarea{
+    width: 100%;
+    margin-bottom: 1.2rem;
+    padding: .6rem 1rem;
+    outline: none;
+    border: none;
+    resize: none;
+    border-bottom: 1px solid #000;
+}
+/* ----------------------- Footer Style -------------------------- */
+footer{
+    background: var(--color-dark);
+    color: var(--color-white);
+    font-family: corbel;
+    font-size: 1.2rem;
+    padding: 1.5rem 0;
+    text-align: center;
+}
