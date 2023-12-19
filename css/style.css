@@ -82,6 +82,40 @@ ul li{
     justify-content: space-between;
     align-items: center;
 }
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    background: var(--color-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    transition: all 0.4s;
+  }
+  
+  .back-to-top i {
+    font-size: 28px;
+    color: #fff;
+    line-height: 0;
+  }
+  
+  .back-to-top:hover {
+    background: var(--color-primary);
+    color: #fff;
+  }
+  
+  .back-to-top.active {
+    visibility: visible;
+    opacity: 1;
+  }
 /* --------------------------------- Header Style ---------------------------------- */
 header{
     width: 100%;
@@ -92,7 +126,8 @@ header{
     background: var(--color-white);
     position: fixed;
     top: 0; left: 0;
-    box-shadow: -5px 5px 5px -1px rgba(112, 112, 112, 0.86);
+    box-shadow: -3px 3px 3px -1px rgba(131, 131, 131, 0.26);
+    z-index: 990;
 }
 header h2 a{
     font-family: tahoma;
@@ -126,6 +161,9 @@ header .navbar ul li a{
     font-size: 1rem;
     color: var(--color-black);
     font-weight: 600;
+}
+header .navbar ul li a:hover{
+    color: var(--color-primary);
 }
 header .navbar ul li a i{
     font-size: 1.5rem;
@@ -204,7 +242,11 @@ main{
         content: "A Mobile Application Developer";
     }
 }
-.buttons-div{margin: 2rem 0;}
+.buttons-div{margin-top: 1.5rem;}
+.hire-me-btn{
+    display: inline-block;
+    padding: .7rem 2rem;
+}
 .social-links{
     margin: .8rem 0;
 }
@@ -249,10 +291,11 @@ main{
     line-height: 1.7rem;
 }
 .about-bottom h4{
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: bold;
     text-align: center;
-}.about-bottom p{
+}
+.about-bottom p{
     text-align: center;
     font-size: 1rem;
     margin-top: 1rem;
@@ -270,16 +313,10 @@ main{
     margin-top: 1rem;
 }
 .skill-wrapper .sections{
-    width: 50%;
+    width: 45%;
     gap: .5rem;
-    min-height: 360px;
-}
-.skill-wrapper .sections:first-child{
-    border-right: 1px solid var(--color-primary);
-    padding-right: 3rem;
-}
-.skill-wrapper .sections:last-child{
-    padding-left: 2rem;
+    min-height: 450px;
+    margin-top: 1rem;
 }
 .skill-wrapper .sections .top{
     margin-bottom: 2rem;
@@ -287,16 +324,24 @@ main{
 .skill-wrapper .sections .top div{
     margin-left: 10px;
 }
-.top-icon{font-size: 2.5rem;}
-.expand-skills{
-    font-size: 2rem;
-    cursor: pointer;
-}
+.top-icon{font-size: 2.3rem;}
 .expanded-box ul li{
-    border-bottom: 1px solid var(--color-primary);
-    padding-bottom: 15px;
+    background: whitesmoke;
+    color: black;
+    padding: 1rem 2rem;
+    border-radius: 5px;
     margin-bottom: 1.2rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+    transition: ease-in-out .4s;
+}
+.expanded-box ul li:hover{
+    letter-spacing: .5rem;
+    padding: 1.5rem 2rem;
+    font-weight: bold;
+    box-shadow: -1px 0px 5px 1px rgba(99, 99, 99, 0.35);
+    -webkit-box-shadow: -1px 0px 5px 1px rgba(99, 99, 99, 0.35);
+    -moz-box-shadow: -1px 0px 5px 1px rgba(99, 99, 99, 0.35);
 }
 /* ----------------------- Services Style -------------------------- */
 .services{
@@ -316,10 +361,21 @@ main{
     padding: 2rem 1rem;
     text-align: center;
     border-radius: 6px;
-    box-shadow: -5px 5px 5px -1px rgba(112, 112, 112, 0.86);
+    box-shadow: -1px 0px 5px 1px rgba(0,0,0,0.35);
+    -webkit-box-shadow: -1px 0px 5px 1px rgba(0,0,0,0.35);
+    -moz-box-shadow: -1px 0px 5px 1px rgba(0,0,0,0.35);
+    cursor: pointer;
+    transition: ease-in-out .5s;
+}
+.service-wrapper .box:hover{
+    background: var(--color-primary);
+    color: white;
+}
+.service-wrapper .box:nth-child(2){
+    min-height: 16rem;
 }
 .service-wrapper .box i{
-    font-size: 1.5rem;
+    font-size: 2.5rem;
 }
 .service-wrapper .box h5{
     font-size: 1.2rem;
@@ -327,7 +383,7 @@ main{
     margin: 1rem 0;
 }
 .service-wrapper .box p{
-    font-size: 1rem;
+    font-size: .8rem;
     font-family: sans-serif, Arial, Helvetica;
     line-height: 1.5rem;
 }
@@ -364,19 +420,79 @@ main{
     -webkit-box-shadow: -1px 0px 5px 1px rgba(0,0,0,0.35);
     -moz-box-shadow: -1px 0px 5px 1px rgba(0,0,0,0.35);
 }
-.project-wrapper .box img{
+.project-wrapper .box .info{
     width: 100%;
-    height: 150px;
-    border: 1px solid var(--color-secondary);
-    object-fit: cover;
+    height: 250px;
+    position: relative;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
-.project-wrapper .box h3{
-    margin: 1rem 0;
+#smartcampus{background: url("../img/smartcampus.png") center center;}
+#instagram{background: url("../img/instagram-clone.png") center center;}
+#netflix{background: url("../img/netflix-clone.png") center center;}
+#whatsapp{background: url("../img/whatsapp-clone.png") center center;}
+#seceapp{background: url("../img/seceapp.png") center center;}
+#biometrics{background: url("../img/biometrics.png") center center;}
+#social-clone{background: url("../img/social-clone.png") center center;}
+#chopchop{background: url("../img/chopchop.png") center center;}
+
+#smartcampus,
+#instagram,
+#netflix,
+#whatsapp,
+#seceapp,
+#biometrics,
+#social-clone,
+#chopchop{
+    background-size: cover;
+}
+.project-wrapper .box .info:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: ease-in .5s;
+}
+.project-wrapper .box .info:hover::before{
+    content: "";
+    background: rgba(0, 0, 0, 0.79);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.project-wrapper .box .details{
+    position: absolute;
+    width: 100%;
+    color: white;
+    padding: 0 13px;
+}
+.project-wrapper .box .details.hide{
+    opacity: 0;
+    transition: ease-in .5s;
+}
+.project-wrapper .box .details.hide:hover{
+    opacity: 1;
+}
+.project-wrapper .box .details h3{
+    font-weight: bold;
+    font-size: 1.6rem;
+    text-decoration: underline;
+    margin-bottom: 10px;
 }
 .project-wrapper .box .description{
-    margin-bottom: 1rem;
-    height: 65px;
     text-align: justify;
+}
+.project-wrapper .box h5{
+    margin: 1rem 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.1rem;
 }
 .language-stack{
     margin-bottom: 1rem;
@@ -385,7 +501,9 @@ main{
 .languages{
     width: 100%;
     gap: 1rem;
+    overflow-x: scroll;
 }
+.languages::-webkit-scrollbar{display: none;}
 .languages p{
     background: var(--color-light);
     padding: .3rem .5rem;
@@ -430,6 +548,10 @@ main{
 .contact-left img{
     width: 200px;
     margin-bottom: 1rem;
+    transition: ease-in-out .5s;
+}
+.contact-left img:hover{
+    transform: scaleX(-1);
 }
 .contact-right{
     width: 50%;

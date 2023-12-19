@@ -21,7 +21,7 @@
         padding-top: 6rem;
         text-align: center;
         transition: .5s ease-in-out;
-        box-shadow: -5px 5px 5px -1px rgba(112, 112, 112, 0.86);
+        border-left: 1px solid var(--color-dark);
     }
     header .navbar ul{
         display: block;
@@ -69,6 +69,19 @@
     .about-right{
         padding-left: 2rem;
     }
+    .about-bottom{
+        width: 100%;
+    }
+    .about-bottom p{
+        margin-top: .5rem;
+        margin-bottom: -1rem;
+    }
+    .buttons-div .resume-btn{
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    /* Skills */
     .skill-wrapper .sections{
         width: 100%;
     }
@@ -82,7 +95,7 @@
     }
     .skill-wrapper .sections:last-child{
         margin-top: 0;
-        padding-left: 1rem;
+        padding-left: 0;
     }
     /* Services */
     .service-wrapper .box{
@@ -93,7 +106,7 @@
         flex-wrap: wrap;
     }
     .certifications-wrapper .box{
-        width: 45%;
+        width: 70%;
         margin: 0 auto;
         margin-bottom: 1rem;
     }
@@ -106,6 +119,13 @@
     .about-right{
         padding-left: 2rem;
     }
+    .skill-wrapper .sections:last-child{
+        margin-top: 2rem;
+        margin-bottom: -7rem;
+    }
+    .expanded-box ul li{
+        padding: 1.2rem;
+    }
     .service-wrapper{
         flex-wrap: wrap;
     }
@@ -116,6 +136,7 @@
         margin: 0 auto;
         margin-bottom: 2.5rem;
     }
+    .service-wrapper .box:last-child{margin-bottom: -2rem;}
     .contact-wrapper{
         display: block !important;
     }
