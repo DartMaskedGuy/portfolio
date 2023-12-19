@@ -80,6 +80,7 @@
         display: block;
         width: 100%;
         text-align: center;
+        margin-top: 3rem;
     }
     /* Skills */
     .skill-wrapper .sections{
@@ -106,7 +107,7 @@
         flex-wrap: wrap;
     }
     .certifications-wrapper .box{
-        width: 70%;
+        width: 90%;
         margin: 0 auto;
         margin-bottom: 1rem;
     }
@@ -120,8 +121,8 @@
         padding-left: 2rem;
     }
     .skill-wrapper .sections:last-child{
-        margin-top: 2rem;
-        margin-bottom: -7rem;
+        margin-top: 4rem;
+        margin-bottom: -10rem;
     }
     .expanded-box ul li{
         padding: 1.2rem;
@@ -130,7 +131,7 @@
         flex-wrap: wrap;
     }
     .service-wrapper .box{
-        width: 80%;
+        width: 95%;
         min-height: 10rem;
         max-height: fit-content;
         margin: 0 auto;
